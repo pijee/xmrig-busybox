@@ -27,7 +27,7 @@ $ docker logs -f xmrig
 xmrig-busybox use ENTRYPOINT to start container, so you can add your args with command line when you start your container. By default, xmrig will show you help.
 
 ## Multiple layers
-I know that i can use one RUN command to stack commands and reduces final size. But if whatever gone wrong, you must reiterate all operations until you find a solution.
+I know that i can use one RUN command to stack commands and reduces final size. But if whatever goes wrong, you must reiterate all operations until you find a solution.
 Using multiples layers help Docker to make temporary saves during jobs.
 In any case, you can delete temporary image with
 ```bash
