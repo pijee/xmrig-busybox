@@ -37,7 +37,7 @@ You 'll find the ID with
 ```bash
 $ docker images | grep none
 ```
-when names and tag are set to <none>. Image size is about 800MB
+when names and tag are set to < none >. Image size is about 800MB
 ```bash
 $ docker images
 REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
