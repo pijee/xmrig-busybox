@@ -1,4 +1,4 @@
-# Mining Monero on Docker intro busybox
+# Mining Monero on Docker with busybox
 
 [Xmrig](https://github.com/xmrig/xmrig) is a free open source tool for mining Monero.
 I made a simple Dockerfile to containerize this application and make deployment easy. I used alpine to compile and busybox to deploy.
@@ -33,11 +33,7 @@ In any case, you can delete temporary image with
 ```bash
 $ docker rmi -f [temporary_image_id]
 ```
-You 'll find the ID with
-```bash
-$ docker images | grep none
-```
-when names and tag are set to < none >. Image size is about 800MB
+You 'll find the ID by searching with names and tag both sets to < none >. Image size is about 800MB
 ```bash
 $ docker images
 REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
