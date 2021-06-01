@@ -4,14 +4,24 @@
 I made a simple Dockerfile to containerize this application and make deployment easy. I used alpine to compile and busybox to deploy.
 When i wrote this file, the final image size is under 7MB.
 
-## How it's works ?
+## Easy way to use
+You can download image from [my own docker repository](https://hub.docker.com/r/pijee/xmrig) by using
+```bash
+$ docker pull pijee/xmrig:latest
+```
+
+## How to use Dockerfile ?
 Clone this git and launch tty in the same path of the **Dockerfile**. Then just run
 ```bash
 $ docker build -t [your_name]/xmrig .
 ```
 
 You will have a lot of informations, just wait.
-Once you have finished, run container by typing :
+
+## How to use image ?
+Xmrig-busybox use ENTRYPOINT to start container, so you can add your args with command line when you start your container. By default, xmrig will show you help.
+
+Example :
 ```bash
 $ docker run -it -d --name xmrig --restart always [your_name]/xmrig -o [url_of_your_pool] -u [your_wallet_id]
 ```
@@ -22,9 +32,6 @@ To view logs in real time :
 $ docker logs -f xmrig
 ```
 *(CTRL+C to exit)*
-
-## Args
-xmrig-busybox use ENTRYPOINT to start container, so you can add your args with command line when you start your container. By default, xmrig will show you help.
 
 ## Multiple layers
 I know that i can use one RUN command to stack commands and reduces final size. But if whatever goes wrong, you must reiterate all operations until you find a solution.
